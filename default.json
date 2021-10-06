@@ -1,9 +1,12 @@
 {
   "extends": ["config:base", ":disableDependencyDashboard"],
-  "devDependencies": {
-    "automerge": true
-  },
-  "separateMultipleMajor": true,
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchDepTypes": ["devDependencies"],
+      "automerge": true
+    }
+  ],
   "ignoreUnstable": true,
   "labels": ["dependencies"],
   "assignees": ["maccyber", "zrrrzzt"]
